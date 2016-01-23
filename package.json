@@ -1,0 +1,27 @@
+{
+  "name": "candidate-survey-bookmarklet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lelandrichardson/candidate-survey-bookmarklet.git"
+  },
+  "author": "Leland Richardson <leland.m.richardson@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lelandrichardson/candidate-survey-bookmarklet/issues"
+  },
+  "homepage": "https://github.com/lelandrichardson/candidate-survey-bookmarklet#readme",
+  "devDependencies": {
+    "babel": "^5.8.35",
+    "browserify": "^13.0.0"
+  },
+  "dependencies": {
+    "react": "^0.14.6",
+    "react-dom": "^0.14.6"
+  }
+}
