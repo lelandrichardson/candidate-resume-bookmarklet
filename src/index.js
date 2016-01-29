@@ -15,6 +15,23 @@ javascript:(function(){
   var question_name = $($('.notes > strong').filter(function () { return $(this).text().match(/\bquestion\b/i) })[0]).next().text(); // question name
 
 
+  // from activity feed
+
+  var interviewer_names = $('.author').map(function() { return $(this).text(); });
+
+  var scorecard_ids = toArray($("#notes a")
+    .filter(function() { return $(this).text() === "View Full Scorecard";})
+    .map(function() { return $(this).attr('href'); }))
+    .map(scorecardFromUrl);
+
+  var interviews = toArray($("#notes .interview").map(questionNameFromNotes));
+
+
+
+  function questionNameFromNotes() {
+    return $(this).find('strong').filter(function () { return $(this).text().match(/\bquestion\b/i) }).first().next().text();
+  }
+
   //var interviewer_name = 'Leland Richardson'; // interviewer's name
   //
   //var candidate_name = 'John Doe'; // Candidate Full name
@@ -29,6 +46,13 @@ javascript:(function(){
     return (name || '').split(' ')[0];
   }
 
+  function scorecardFromUrl(url) {
+    return url.split('/')[2];
+  }
+
+  function toArray($els) {
+    return [].prototype.slice.call($els, 0);
+  }
 
   (function run(iname, cname, scid, cemail, qname) {
 
